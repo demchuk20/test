@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>list</title>
+    <title>List</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
@@ -16,6 +16,7 @@
                  preserveAspectRatio="xMidYMid slice" focusable="false" role="img" alt="${game.name}">
             <h3 th:text="${iterStat.count} + '. ' + ${game.name}"></h3>
             <p th:text="${game.artistName}"></p>
+            <p class="font-weight-lighter" th:text="${game.releaseDate}"></p>
             <a class="stretched-link" th:href="${game.url}"></a>
         </div>
     </div>

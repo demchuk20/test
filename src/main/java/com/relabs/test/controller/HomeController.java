@@ -1,6 +1,7 @@
 package com.relabs.test.controller;
 
 import com.relabs.test.entity.Game;
+import com.relabs.test.logger.Print;
 import com.relabs.test.repository.GameListRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,11 +20,13 @@ public class HomeController {
         this.repository = repository;
     }
 
+    @Print
     @GetMapping("/")
     public String home() {
         return "home";
     }
 
+    @Print
     @GetMapping("/list")
     public String list(@RequestParam(required = false, defaultValue = "100") String limit,
                        @RequestParam String country, @RequestParam String category, Model model) {

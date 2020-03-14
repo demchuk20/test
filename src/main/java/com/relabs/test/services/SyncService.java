@@ -1,6 +1,7 @@
 package com.relabs.test.services;
 
 import com.relabs.test.entity.Game;
+import com.relabs.test.logger.Print;
 import com.relabs.test.repository.GameListRepository;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -64,6 +65,7 @@ public class SyncService {
     }
 
     //3 600 000
+    @Print
     @Scheduled(fixedRate = 60000)
     public void syncing() throws Exception {
         List<Game> topFreeUS = jsonParsing(getJson(new URL("https://rss.itunes.apple.com/" +
